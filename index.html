@@ -1,303 +1,148 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecoterra Global Ltd</title>
+  <!-- External CSS file (recommended for larger projects) -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Internal CSS for quick customization -->
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      background: #f5f6fa;
+      color: #222;
+    }
+    header {
+      background: #1e90ff;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    nav {
+      margin: 1rem 0;
+      text-align: center;
+    }
+    nav a {
+      color: #1e90ff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+    .property-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .property-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      width: 320px;
+      padding: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .property-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .property-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .contact-form {
+      background: #fff;
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: #1e90ff;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .contact-form button:hover {
+      background: #006ad1;
+    }
+    @media (max-width: 700px) {
+      .property-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .property-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Find Your Dream Home</h1>
+    <nav>
+      <a href="#properties">Properties</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <title>Ecoterra Global Ltd</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#f8fcfb] group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3f1] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#0e1b18]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </div>
-            <h2 class="text-[#0e1b18] text-lg font-bold leading-tight tracking-[-0.015em]">Ecoterra Global Ltd</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#0e1b18] text-sm font-medium leading-normal" href="#">Home</a>
-              <a class="text-[#0e1b18] text-sm font-medium leading-normal" href="#">Projects</a>
-              <a class="text-[#0e1b18] text-sm font-medium leading-normal" href="#">Properties</a>
-              <a class="text-[#0e1b18] text-sm font-medium leading-normal" href="#">Consultancy</a>
-              <a class="text-[#0e1b18] text-sm font-medium leading-normal" href="#">About Us</a>
-              <a class="text-[#0e1b18] text-sm font-medium leading-normal" href="#">Contact</a>
-            </div>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#14b796] text-[#0e1b18] text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Login</span>
-            </button>
-          </div>
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNxJcEuVsHKEt7TMuDPMeGKAvaMESz_xfKhKJlrBlYVmVIrkjMBCjQVOoW2JOyDJKFlBRKc2VKFdT0KvRThyLwZELGqscTSNLLLUVyRssat4caJxYHkLwcgJTdhdP3Fj0zp3iB0r-mrplwXOp3l69yLf2Iq9tcKpMzKFnSy8Oy3xLmBvVKVDlZqegMbPJgElqWYb7St4SxK355tZn34kiUWyWNK0aSFgJGQlhMJ_ddi92X4vVZd5V3wddQvEOZCSRqLb6VjMUA7lzR");'
-                >
-                  <div class="flex flex-col gap-2 text-left">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                      Your Dream Home Awaits
-                    </h1>
-                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      Discover premium properties and expert real estate services in Nigeria.
-                    </h2>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#14b796] text-[#0e1b18] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                  >
-                    <span class="truncate">Explore Properties</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <h2 class="text-[#0e1b18] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured Development Projects</h2>
-            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-              <div class="flex items-stretch p-4 gap-3">
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKXfAkiM5Ey0SzqDHbPm_I-x1SZACr77js91gSCH4R97VI2ZZ21cvdC59c0VpirBCq9CFVGfiIeZKmFvR18Ioz5ca2ZCwftpcSaMLlEbMwEo0Sy5oV0QihFj2PXR3gdzfccmMNMyrTSKhyvYGVj1esh4AqXD6PwrAApuABswLB3E-k1aZ6bW5XAh-Iea0l_4Z9rNI30ZEEsuP0dxigBuCieViKxsO3gMR2C0x4IfHVwkbfEUhDN88KnnzkYIe9SguJ8P53F_oCmBXU");'
-                  ></div>
-                  <div>
-                    <p class="text-[#0e1b18] text-base font-medium leading-normal">The Oasis Residences</p>
-                    <p class="text-[#4e9789] text-sm font-normal leading-normal">A serene residential community with modern amenities.</p>
-                  </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOcTux3byJBcUUxx9Y0ODoGUGVNsIfUOgwZU43u3bFTiu4lEgeVx7SLwYYUzA4ptw7AapQ3oCEZxuuzv-Ysdm2Gkbr4E_ZjrSe0rS-OsR4FCfInEurt6kxqsyvP8F6YEtk_QzLk4tp73Pyep4IE7Dfi0Os-ePLlNJicwU1v9ZX1XbFv-7155-e-ZG3yLtm02gEJ7EerWsmhBKtWDPmCgzJ1m9HxJfl9WG574zAf-zNWuDSQMLE3RiiOk0bjmbjnveggNVmByrFRubr");'
-                  ></div>
-                  <div>
-                    <p class="text-[#0e1b18] text-base font-medium leading-normal">Skyline Apartments</p>
-                    <p class="text-[#4e9789] text-sm font-normal leading-normal">Luxury living in the heart of the city.</p>
-                  </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAi8fj5u38g4u0Jkwb_9JHv_BWrkg7sEYTCNrl0RtEVCtDWv_llFrDAOK-M9-ypp8rZQ0esUAF6XVxUphowl6vgRBQT9yvsqgdmcW3o9dwANksZPdV2WcH2TSdNThSMFb9ElQ8kra_JESoCivBaSUhPfEXPn1yt_AhxEpfWMsVToeGkRAqVrawPXx1aG6CxEISxuEAF_VXKQ65hUDzKeXk83UOwByuMJsbADK9u5FvTMyBN6Bn1VnK3d5Ba3XkDWm3PW56qLBfZoqc0");'
-                  ></div>
-                  <div>
-                    <p class="text-[#0e1b18] text-base font-medium leading-normal">Green Haven Estate</p>
-                    <p class="text-[#4e9789] text-sm font-normal leading-normal">An eco-friendly estate with lush green spaces.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h2 class="text-[#0e1b18] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Properties for Sale</h2>
-            <div class="pb-3">
-              <div class="flex border-b border-[#d0e7e2] px-4 gap-8">
-                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#14b796] text-[#0e1b18] pb-[13px] pt-4" href="#">
-                  <p class="text-[#0e1b18] text-sm font-bold leading-normal tracking-[0.015em]">Houses</p>
-                </a>
-                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4e9789] pb-[13px] pt-4" href="#">
-                  <p class="text-[#4e9789] text-sm font-bold leading-normal tracking-[0.015em]">Land</p>
-                </a>
-              </div>
-            </div>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjWaPbjfaKjVF5XHiP8P6Zw8AHa4T2AKfBo6VFHXC2bwx8-oFD98KW6IdADdF2uqGwnsut0yxNt_8BWmGEBEeglIFiScRAsDJA0ERTdG6WxLOCI3KxRYyoi3xq8OeVMEP7SoFoO9FCzOhAIONlwxFmrpk266oxG3k7ZlHKOZAI4fumQQeNrJh637nryO6cKJvbwj2xb8vpjCy5HaXCe9NUEwBYyNSt-mI4TLDCxtj1Ivpdmuke-MbrIRtmfXda7UEa3jkM3w8OFZrp");'
-                ></div>
-                <div>
-                  <p class="text-[#0e1b18] text-base font-medium leading-normal">Luxury Villa in Lekki</p>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">5 Beds | 4 Baths | 750 sqm</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKqZu5Ek4Ilx0NxFT5o47ffCkr-xxKFskFWm3pd2ztQ1rN17JsQ7Hhfxqt3Uiye6RWDAG86FvZYaH6IjpMQl_cFTO9i6evuDdPt08omX6OWl66GTdXLQ2j4vhfX9UC12lWCTEnie2OivvWHKhfUE5zkTnq64gnTbd-YM0LebgepyLsJ4pmk-QhIAHNhxAnGD2iriyAlDFu_AfrlAj1P7zuumXPBDCaFh3axfBPBKZklp_EI3fID6rvwOUPs4cCuaGX_JOaWYiuHDm7");'
-                ></div>
-                <div>
-                  <p class="text-[#0e1b18] text-base font-medium leading-normal">Family Home in Abuja</p>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">4 Beds | 3 Baths | 650sqm</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDD8KhNhCuHBW2OP9dWkDeV8JYUtVc2QEiDHNxvpxBenRHte6-gXoLuGDKWn2vfXCm1rB2vYjveOvhDL7CmOJYQSSHY-40zTRTgKNGPnSZUktum1ojlltuIN9Tncrk8oEfeX-YuKjpW27D7JnkRXwMGSeV1vIq17Xi0_MJXmQv9oDMpBQtxv1JhNHzyavLqwU6P6nL3HEFDadDFmfTGBqLjH_JqJXcboYbSYg_uBcIJBpPPUBCqqXuzOr3ZzQqKhm9UuU0-AQF0-J22");'
-                ></div>
-                <div>
-                  <p class="text-[#0e1b18] text-base font-medium leading-normal">Contemporary House in Lagos</p>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">3 Beds | 2 Baths | 600sqm</p>
-                </div>
-              </div>
-            </div>
-            <div class="pb-3">
-              <div class="flex border-b border-[#d0e7e2] px-4 gap-8">
-                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4e9789] pb-[13px] pt-4" href="#">
-                  <p class="text-[#4e9789] text-sm font-bold leading-normal tracking-[0.015em]">Houses</p>
-                </a>
-                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#14b796] text-[#0e1b18] pb-[13px] pt-4" href="#">
-                  <p class="text-[#0e1b18] text-sm font-bold leading-normal tracking-[0.015em]">Land</p>
-                </a>
-              </div>
-            </div>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYk_X9A__xJZt07J0BVZb00dr87Vhfi_mn9XmdqeD3jx_gjcgPONN4SVD925VG6JBYOSeNhVSKzryPnLRD5RnsU1WSE1fJhkAtUF5KEIi9fAOxPMdwn5YsAJ9gp8KtbU8ua9Z1-QBtqWw6NI7sT1bBezeDF7BLLpN67OmkVQZmddoKMdCT4hwHBNzdFilFvVTVZvWKiQo50rEK7lt7wmyFPiTOmJboEBIcFQGfTzdV9bqGyvqjAOfhZTE8dXOXh7ILe-oyRMXxUVtH");'
-                ></div>
-                <div>
-                  <p class="text-[#0e1b18] text-base font-medium leading-normal">Prime Land in Ikoyi</p>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">1,000 sq m</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmEFi2N0oMo9RH_-AgXBe7b5aU6zXkzeSx9LsLsc6nX8k_CQEJBkmhbc6vX9AoK8fpfZWKaBiUTiqX0C7zKtdNFbqXpNqxJ9_jy_F0I_sxvarIuzqQClacO5x1Dh6mXTVypeoJyU5Ap3NzztQ5c2yXi4F7Pj6OvD75wtBtJfclw60unYbsIwyswEf__dj8ilfofjwI1oGegDLviqw7365FtTBNg5VIh6qUoc916X2XTcCnnHiYBUVTpkUE-EejTa08ol6CMqAm0mNt");'
-                ></div>
-                <div>
-                  <p class="text-[#0e1b18] text-base font-medium leading-normal">Commercial Land in Victoria Island</p>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">2,000 sq m</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQjM_K0btsnIaEmvDOs6_r8F_DkZg2KG8VZLeQVDuH9ud9PssWUQngGuwtjjzKABP6v_Zl62HtlmqXG3WQqvYY7rpMBMf-RIj-TZqzIemVgFbZwTfBP1LdzjqWUAvPHg8NILEjzqmdp4ThKXEjJDGzZgChX0mQnnJQgbOKLzELJ3NsTluLrckcakAFOIpBvI-PHIIUJ1F72eMa7aj8Hj3RN8UUKngJtBZZL1i2uCJE_FYkooJYemZ8a0TVfq8WJr04RXAc5qOSK7wT");'
-                ></div>
-                <div>
-                  <p class="text-[#0e1b18] text-base font-medium leading-normal">Residential Plot in Magodo</p>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">500 sq m</p>
-                </div>
-              </div>
-            </div>
-            <h2 class="text-[#0e1b18] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Consultancy Services</h2>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e7e2] bg-[#f8fcfb] p-4 flex-col">
-                <div class="text-[#0e1b18]" data-icon="Briefcase" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <h2 class="text-[#0e1b18] text-base font-bold leading-tight">Investment Advisory</h2>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">Expert advice on property investment and development.</p>
-                </div>
-              </div>
-              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e7e2] bg-[#f8fcfb] p-4 flex-col">
-                <div class="text-[#0e1b18]" data-icon="House" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <h2 class="text-[#0e1b18] text-base font-bold leading-tight">Property Management</h2>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">Comprehensive property management solutions.</p>
-                </div>
-              </div>
-              <div class="flex flex-1 gap-3 rounded-lg border border-[#d0e7e2] bg-[#f8fcfb] p-4 flex-col">
-                <div class="text-[#0e1b18]" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <h2 class="text-[#0e1b18] text-base font-bold leading-tight">Valuation Services</h2>
-                  <p class="text-[#4e9789] text-sm font-normal leading-normal">Professional property valuation services.</p>
-                </div>
-              </div>
-            </div>
-            <h2 class="text-[#0e1b18] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Ecoterra Global Ltd</h2>
-            <p class="text-[#0e1b18] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Ecoterra Global Ltd is a leading real estate firm in Nigeria, committed to providing exceptional properties and services. Our mission is to help clients find their
-              perfect home or investment, with integrity and professionalism. We value innovation, sustainability, and client satisfaction.
-            </p>
-            <h2 class="text-[#0e1b18] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact Us</h2>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0e1b18] text-base font-medium leading-normal pb-2">Name</p>
-                <input
-                  placeholder="Your Name"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e1b18] focus:outline-0 focus:ring-0 border border-[#d0e7e2] bg-[#f8fcfb] focus:border-[#d0e7e2] h-14 placeholder:text-[#4e9789] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0e1b18] text-base font-medium leading-normal pb-2">Email</p>
-                <input
-                  placeholder="Your Email"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e1b18] focus:outline-0 focus:ring-0 border border-[#d0e7e2] bg-[#f8fcfb] focus:border-[#d0e7e2] h-14 placeholder:text-[#4e9789] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0e1b18] text-base font-medium leading-normal pb-2">Phone</p>
-                <input
-                  placeholder="Your Phone"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e1b18] focus:outline-0 focus:ring-0 border border-[#d0e7e2] bg-[#f8fcfb] focus:border-[#d0e7e2] h-14 placeholder:text-[#4e9789] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#0e1b18] text-base font-medium leading-normal pb-2">Message</p>
-                <textarea
-                  placeholder="Your Message"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e1b18] focus:outline-0 focus:ring-0 border border-[#d0e7e2] bg-[#f8fcfb] focus:border-[#d0e7e2] min-h-36 placeholder:text-[#4e9789] p-[15px] text-base font-normal leading-normal"
-                ></textarea>
-              </label>
-            </div>
-            <div class="flex px-4 py-3 justify-start">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#14b796] text-[#0e1b18] text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Send Message</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <footer class="flex justify-center">
-          <div class="flex max-w-[960px] flex-1 flex-col">
-            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#4e9789] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
-                <a class="text-[#4e9789] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
-              </div>
-              <p class="text-[#4e9789] text-base font-normal leading-normal">© 2024 Ecoterra Global Ltd. All rights reserved.</p>
-            </footer>
-          </div>
-        </footer>
-      </div>
+  <section id="properties" class="property-list">
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Luxury Villa">
+      <h2>Luxury Villa in Lekki</h2>
+      <p>5 Beds | 4 Baths | 750 sqm</p>
+      <button onclick="alert('More details coming soon!')">View Details</button>
     </div>
-  </body>
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961" alt="Modern Apartment">
+      <h2>Modern Apartment in VI</h2>
+      <p>3 Beds | 2 Baths | 400 sqm</p>
+      <button onclick="alert('More details coming soon!')">View Details</button>
+    </div>
+    <!-- Add more property cards as needed -->
+  </section>
+
+  <section id="contact">
+    <form class="contact-form" id="contactForm">
+      <h2>Contact Us</h2>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="formMessage"></div>
+    </form>
+  </section>
+
+  <!-- JavaScript for interactivity -->
+  <script>
+    // Contact form submission (example, adjust endpoint as needed)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Collect form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Example: Show a message (replace with fetch to backend for real use)
+      document.getElementById('formMessage').textContent = 'Thank you, ' + name + '! Your message has been sent.';
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+</body>
 </html>
